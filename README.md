@@ -14,7 +14,7 @@ Acest repositoriu conține rezolvările pentru două laboratoare de Machine Lear
 
 ## Lab 2
 
-În folderul `lab_2` se găsesc fișierele și codul sursă corespunzătoare Laboratorului 2. Acest laborator se concentrează pe algoritmi de clasificare, cum ar fi arborii de decizie și metoda k-vecinii cei mai apropiați (K-NN).
+În folderul `lab_2` se găsesc fișierele și codul sursă corespunzătoare Laboratorului 2. Această aplicație Python efectuează o analiză a datelor folosind tehnici de învățare automată, inclusiv scalarea datelor, eliminarea valorilor aberante și antrenarea unui model de regresie liniară. Rezultatele analizei sunt salvate într-un fișier Markdown.
 
 ### Structura folderului
 
@@ -27,8 +27,3 @@ Acest repositoriu conține rezolvările pentru două laboratoare de Machine Lear
 Pentru fiecare laborator, puteți accesa folderul corespunzător și puteți executa scriptul Python `index.py`. Acesta va procesa datele, va efectua analizele și va genera un fișier Markdown cu rezultatele.
 
 Pentru a accesa rezultatele, consultați fișierul `Output-[timestamp].md` generat în fiecare folder după rularea scriptului.
-
-## Cerințe de sistem
-
-Pentru a rula codul sursă și a utiliza bibliotecile Python necesare, asigurați-vă că aveți instalat Python și urmați cerințele specifice din fiecare fișier `requirements.txt` din fiecare folder de laborator.
-
