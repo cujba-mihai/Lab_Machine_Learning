@@ -4,7 +4,7 @@ Acest repositoriu conține rezolvările pentru două laboratoare de Machine Lear
 
 ## Laboratorul 1
 
-În folderul `lab_1` se găsesc fișierele și codul sursă corespunzătoare Laboratorului 1. Acest laborator explorează conceptele de prelucrare a datelor, analiză exploratorie, scalare și preprocesare, regresie liniară și evaluarea modelelor.
+În folderul `lab_1` se găsesc fișierele și codul sursă corespunzătoare Laboratorului 1. Această aplicație Python construiește un arbore decizional în baza unui set de date de instruire, și îl folosește pentru a lua decizii pe baza unor date noi.
 
 ### Structura folderului
 

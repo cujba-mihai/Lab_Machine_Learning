@@ -1,7 +1,8 @@
 ## Decision Tree Classifier
 
 Această aplicație Python construiește un arbore decizional în baza unui set de date de instruire, și îl folosește pentru a lua decizii pe baza unor date noi.
-Setul de Date
+
+## Setul de Date
 
 Setul de date este format din 16 înregistrări, fiecare dintre ele conținând valorile pentru următoarele atribute:
 
