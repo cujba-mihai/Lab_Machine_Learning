@@ -18,7 +18,7 @@ Acest repositoriu conține rezolvările pentru două laboratoare de Machine Lear
 
 ### Structura folderului
 
-- `data_weather.csv`: Fișierul CSV care conține datele despre condițiile meteorologice.
+- `data_cars.csv`: Fișierul CSV care conține datele despre autoturisme.
 - `index.py`: Scriptul Python care conține codul sursă pentru Laboratorul 2.
 - `Output-[timestamp].md`: Fișierul Markdown generat, care conține rezultatele analizelor și evaluările modelelor.
 
