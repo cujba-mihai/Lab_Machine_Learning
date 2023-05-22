@@ -46,7 +46,7 @@ with open(filename, "w") as file:
     df_scaled = pd.DataFrame(min_max_scaler.fit_transform(df), columns=df.columns)
 
     file.write("## After scaling, number of rows: " + str(len(df_scaled)) + "\n")
-    df_scaled = df_scaled[(np.abs(stats.zscore(df_scaled)) < 10).all(axis=1)] # increased Z-score threshold to 10
+    df_scaled = df_scaled[(np.abs(stats.zscore(df_scaled)) < 10).all(axis=1)]
     file.write("## After outlier removal, number of rows: " + str(len(df_scaled)) + "\n")
 
     X = df_scaled.drop('Price', axis=1)
