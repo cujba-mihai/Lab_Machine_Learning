@@ -30,7 +30,7 @@ plt.plot(range(1, 11), distortions, marker='o')
 plt.xlabel('Numărul de clustere (k)')
 plt.ylabel('Distorția')
 plt.title('Metoda Elbow')
-plt.savefig('elbow_method.png')  # Salvează graficul ca imagine
+plt.savefig('elbow_method.png')
 plt.show()
 
 kmeans = KMeans(n_clusters=3, random_state=42)
@@ -45,7 +45,7 @@ dbscan_labels = dbscan.fit_predict(scaled_data)
 # Evaluarea calității segmentării
 kmeans_score = silhouette_score(scaled_data, kmeans_labels)
 hierarchical_score = silhouette_score(scaled_data, hierarchical_labels)
-if len(np.unique(dbscan_labels)) > 1:  # Asigurați-vă că există cel puțin 2 clustere
+if len(np.unique(dbscan_labels)) > 1:
     dbscan_score = silhouette_score(scaled_data[dbscan_labels != -1], dbscan_labels[dbscan_labels != -1])
 else:
     dbscan_score = "N/A"
