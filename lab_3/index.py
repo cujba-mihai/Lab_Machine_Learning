@@ -1,12 +1,12 @@
-# Import the necessary libraries
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN
-from sklearn.metrics import silhouette_score
-from sklearn.preprocessing import StandardScaler
-from urllib.request import urlopen
-import seaborn as sns
+import pandas as pd # pandas is a data manipulation library. It is used to load and manipulate the data and for One-Hot Encoding.
+import numpy as np # numpy is used to perform various numerical operations like statistical analysis on arrays.
+import matplotlib.pyplot as plt # matplotlib is a plotting library used for 2D graphics. It's used to create scatter plots of the data.
+from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN # sklearn is a Machine Learning library. KMeans, AgglomerativeClustering, DBSCAN are clustering algorithms.
+from sklearn.metrics import silhouette_score # silhouette_score is a metric used to calculate the goodness of a clustering technique. A higher Silhouette Score indicates that the data is better matched to its own cluster and poorly matched to neighboring clusters.
+from sklearn.preprocessing import StandardScaler # StandardScaler is used to standardize features by removing the mean and scaling to unit variance.
+from urllib.request import urlopen # urllib is used to fetch URLs (Uniform Resource Locators). It's used here to load the Iris data set from the UCI Machine Learning Repository.
+import seaborn as sns # seaborn is a plotting library based on matplotlib that provides a high-level interface for creating attractive graphs. It's used to create scatter plots of the data.
+
 
 # Download and load the Iris dataset from the UCI Machine Learning Repository
 url = "http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"

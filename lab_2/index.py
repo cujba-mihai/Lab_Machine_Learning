@@ -1,16 +1,16 @@
-# Importing necessary libraries for data analysis and machine learning
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn import preprocessing
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-from sklearn import metrics
-from scipy import stats
-from mlxtend.evaluate import bias_variance_decomp
-import markdown
-import time
+import pandas as pd # pandas is a library providing high-performance, easy-to-use data structures and data analysis tools, like DataFrame.
+import numpy as np # numpy is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.
+import matplotlib.pyplot as plt # matplotlib.pyplot is a collection of command style functions that make matplotlib work like MATLAB. It is used to create figures and plots.
+import seaborn as sns # seaborn is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.
+from sklearn import preprocessing # The sklearn.preprocessing package provides several common utility functions and transformer classes to change raw feature vectors into a representation that is more suitable for downstream estimators. It's used here for scaling.
+from sklearn.model_selection import train_test_split # train_test_split is a function in Sklearn model selection for splitting data arrays into two subsets: for training data and for testing data. 
+from sklearn.linear_model import LinearRegression # LinearRegression is a machine learning library for python that serves regression models. 
+from sklearn import metrics # sklearn's metrics module implements functions assessing prediction error for specific purposes. In this code, it's used for model evaluation.
+from scipy import stats # scipy is a library used for scientific computing and technical computing. scipy.stats contains a large number of probability distributions and statistical functions.
+from mlxtend.evaluate import bias_variance_decomp # Mlxtend (machine learning extensions) is a Python library of useful tools for the day-to-day data science tasks. The bias_variance_decomp method is used from this library for bias-variance decomposition.
+import markdown # markdown is a Python library to convert markdown to HTML. It's a text-to-HTML conversion tool for web writers.
+import time # time is a Python library for time-related tasks. It's used here to get the current time for naming the markdown file.
+
 
 # Setting filename to store the output analysis in a Markdown format with a timestamp
 filename = "Output-" + time.strftime("%Y%m%d-%H%M%S") + ".md"
