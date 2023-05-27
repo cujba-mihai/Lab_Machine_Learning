@@ -1,3 +1,4 @@
+# Import the necessary libraries
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -7,42 +8,46 @@ from sklearn.preprocessing import StandardScaler
 from urllib.request import urlopen
 import seaborn as sns
 
-# Descărcare și încărcare set de date Iris
+# Download and load the Iris dataset from the UCI Machine Learning Repository
 url = "http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
 names = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'class']
 iris_data = pd.read_csv(urlopen(url), names=names)
 
-# Excluderea coloanei 'class'
+# Drop the 'class' column as we are interested in unsupervised learning here
 iris_data = iris_data.drop('class', axis=1)
 
-# Normalizarea datelor
+# Normalize the data using StandardScaler
 scaler = StandardScaler()
 scaled_data = scaler.fit_transform(iris_data)
 
-# Determinarea numărului optim de clustere folosind metoda Elbow
+# Determine the optimal number of clusters using the Elbow method
 distortions = []
 for k in range(1, 11):
     kmeans = KMeans(n_clusters=k, n_init='auto', random_state=42)
     kmeans.fit(scaled_data)
     distortions.append(kmeans.inertia_)
 
+# Plot the elbow method results
 plt.plot(range(1, 11), distortions, marker='o')
-plt.xlabel('Numărul de clustere (k)')
-plt.ylabel('Distorția')
-plt.title('Metoda Elbow')
+plt.xlabel('Number of clusters (k)')
+plt.ylabel('Distortion')
+plt.title('Elbow Method')
 plt.savefig('elbow_method.png')
 plt.show()
 
+# Apply K-Means clustering on the data
 kmeans = KMeans(n_clusters=3, random_state=42)
 kmeans_labels = kmeans.fit_predict(scaled_data)
 
+# Apply Agglomerative clustering on the data
 hierarchical = AgglomerativeClustering(n_clusters=3)
 hierarchical_labels = hierarchical.fit_predict(scaled_data)
 
+# Apply DBSCAN clustering on the data
 dbscan = DBSCAN(eps=0.5, min_samples=5)
 dbscan_labels = dbscan.fit_predict(scaled_data)
 
-# Evaluarea calității segmentării
+# Evaluate the quality of clustering
 kmeans_score = silhouette_score(scaled_data, kmeans_labels)
 hierarchical_score = silhouette_score(scaled_data, hierarchical_labels)
 if len(np.unique(dbscan_labels)) > 1:
@@ -50,7 +55,7 @@ if len(np.unique(dbscan_labels)) > 1:
 else:
     dbscan_score = "N/A"
 
-# Crearea de grafice de dispersie pentru fiecare metodă de clusterizare
+# Create scatter plots for each clustering method
 sns.scatterplot(x=iris_data['sepal_length'], y=iris_data['sepal_width'], hue=kmeans_labels, palette="deep").set_title('KMeans Clustering')
 plt.savefig('kmeans_clustering.png')
 plt.show()
@@ -63,8 +68,7 @@ sns.scatterplot(x=iris_data['sepal_length'], y=iris_data['sepal_width'], hue=dbs
 plt.savefig('dbscan_clustering.png')
 plt.show()
 
-
-# Scrierea rezultatelor în fișierul markdown
+# Write the results to a markdown file
 with open('raport.md', 'w') as f:
     f.write(f'# Rezultatele Clusterizării\n\n')
     f.write(f'![Metoda Elbow](elbow_method.png)\n\n')
